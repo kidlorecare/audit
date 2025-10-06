@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kidlore Audit Studio</title>
+  <meta name="description" content="Premium, daycare-specific audit generator for Gurgaon centres.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})">kidlore</a>
+      <nav class="nav-links">
+        <a href="#inputs">Inputs</a>
+        <a href="#preview">Preview</a>
+        <a href="#help">Help</a>
+      </nav>
+      <button class="btn small" id="exportPdfBtn">Export PDF</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Kidlore Audit Studio</h1>
+      <p class="sub">Generate premium, parent-first audits for any daycare. Single page. Printable. No AI tone.</p>
+      <div class="hero-actions">
+        <button class="btn" id="generateBtn">Generate audit</button>
+        <button class="btn ghost" id="copyBtn">Copy to clipboard</button>
+        <button class="btn ghost" id="downloadHtmlBtn">Download HTML</button>
+      </div>
+    </section>
+
+    <section id="inputs" class="panel">
+      <h2>Centre inputs</h2>
+      <div class="grid">
+        <label>Centre name<input id="centreName" placeholder="Early Blossoms"></label>
+        <label>Sector / locality<input id="sector" placeholder="DLF 4, Sector 43"></label>
+        <label>Hours<input id="hours" placeholder="9:00 am - 7:30 pm"></label>
+        <label>Age bands<input id="ages" placeholder="6 months - 8 years"></label>
+        <label>Fee band<input id="fees" placeholder="₹7,500 - ₹14,000 (range)"></label>
+        <label>Ratios by age<input id="ratios" placeholder="Under 2: 1:4, 2-4y: 1:6"></label>
+        <label>CCTV policy<input id="cctv" placeholder="Recorded only; view-on-request at office"></label>
+        <label>Meals<input id="meals" placeholder="Cooked onsite; veg; allergies noted"></label>
+        <label>Transport<input id="transport" placeholder="Available in nearby sectors"></label>
+        <label>Extended hours<input id="extended" placeholder="Till 7:30 pm; late pickup available"></label>
+        <label>Website URL<input id="siteUrl" placeholder="https://..."></label>
+        <label>Instagram URL<input id="igUrl" placeholder="https://instagram.com/..."></label>
+        <label>Google Business Profile link<input id="gbpUrl" placeholder="Maps/GBP link"></label>
+      </div>
+
+      <h3 style="margin-top:20px">Grades</h3>
+      <div class="grid grid-3">
+        <label>Visibility grade
+          <select id="gradeVis"><option>A</option><option>B</option><option selected>C</option><option>D</option></select>
+        </label>
+        <label>Trust signals grade
+          <select id="gradeTrust"><option>A</option><option selected>B</option><option>C</option><option>D</option></select>
+        </label>
+        <label>Funnel health grade
+          <select id="gradeFunnel"><option>A</option><option>B</option><option selected>C</option><option>D</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>7-day sprint (edit if needed)</h2>
+      <div class="grid">
+        <input id="d1" value="Fix site header CTA to Book a 15 min visit linked to WhatsApp.">
+        <input id="d2" value="Upload 12 photos parents ask for: gate, reception, CCTV sign, nap room, washroom, kitchen, outdoor, floor time, corners, first aid, evacuation map, pickup.">
+        <input id="d3" value="Seed GBP Q and A with 5 parent questions and answers.">
+        <input id="d4" value="Instagram: new bio, link in bio to visit form, pin 3 posts on safety, hours, fees.">
+        <input id="d5" value="WhatsApp auto reply with two visit slots; confirm in 10 minutes.">
+        <input id="d6" value="Add Safety and Policies page: CCTV, ratios, illness rule, staff checks, pickup rules.">
+        <input id="d7" value="Ask 10 happy parents for reviews with a 2 line WhatsApp message.">
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Severity flags</h2>
+      <div class="grid">
+        <label><input type="checkbox" id="sevCritical" checked> Critical: missing visit CTA; inconsistent address or phones; thin GBP</label>
+        <label><input type="checkbox" id="sevMajor" checked> Major: unclear policies; weak image set; slow mobile media</label>
+        <label><input type="checkbox" id="sevMinor" checked> Minor: social bio clarity; review cadence</label>
+      </div>
+    </section>
+
+    <section id="preview" class="panel preview">
+      <div id="report" class="report">
+        <p class="muted">Generate your report to preview here.</p>
+      </div>
+    </section>
+
+    <section id="help" class="panel">
+      <h2>Help</h2>
+      <ol>
+        <li>Fill inputs. Click Generate audit.</li>
+        <li>Edit any section inline in the preview if needed.</li>
+        <li>Export PDF or Download HTML.</li>
+        <li>Host on GitHub Pages. The app is fully static.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot wrap">
+      <div class="foot-top">
+        <div class="logo">kidlore</div>
+        <div class="legal"><span>© 2025 kidlore</span><span>All rights reserved</span><a href="#">Terms</a><a href="#">Privacy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
